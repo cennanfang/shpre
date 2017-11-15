@@ -16,6 +16,10 @@ public class MemberService {
         redisClientTemplate.set(member.getId().getBytes(), SerializeUtil.serialize(member));
     }
 
+    public void add(Member member, int ex) {
+        redisClientTemplate.setex(member.getId().getBytes(), ex,SerializeUtil.serialize(member));
+    }
+
     public void delete(String id) {
 
         Long result = redisClientTemplate.delete(id);

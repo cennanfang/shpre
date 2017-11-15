@@ -1,5 +1,6 @@
 package com.buliyiren.shpre.test.unit;
 
+import com.buliyiren.shpre.Contants;
 import com.buliyiren.shpre.model.Member;
 import com.buliyiren.shpre.model.User;
 import com.buliyiren.shpre.service.MemberService;
@@ -21,21 +22,25 @@ public class MemberServiceTest extends  BaseUnitTest{
 
     @Test
     public void testAdd(){
+//        Member member = new Member();
+//        member.setId("1");
+//        member.setNickname("guoxiaoming");
+//        memberService.add(member);
         Member member = new Member();
-        member.setId("1");
+        member.setId("2");
         member.setNickname("guoxiaoming");
-        memberService.add(member);
+        memberService.add(member, Contants.REDIS_EXPIRE);
     }
 
     @Test
     public void testFind(){
-        Member member = this.memberService.get("1");
+        Member member = this.memberService.get("2");
 
         System.out.println(member.getId() + "   " + member.getNickname());
     }
 
     @Test
     public void testDelete() {
-        memberService.delete("1");
+        memberService.delete("2");
     }
 }

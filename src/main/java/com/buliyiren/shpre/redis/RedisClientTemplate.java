@@ -47,6 +47,32 @@ public class RedisClientTemplate {
     }
 
     /**
+     * 设置单个值
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    public String  setex(byte[] key, int seconds, byte[] value) {
+        String result = null;
+
+        ShardedJedis shardedJedis = redisDataSource.getRedisClient();
+        if (shardedJedis == null) {
+            return result;
+        }
+        boolean broken = false;
+        try {
+            result = shardedJedis.setex(key, seconds, value);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            broken = true;
+        } finally {
+            redisDataSource.returnResource(shardedJedis, broken);
+        }
+        return result;
+    }
+
+    /**
      * 获取单个值
      *
      * @param key
