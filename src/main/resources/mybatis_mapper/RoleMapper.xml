@@ -8,7 +8,6 @@
 		<result property="name" column="name" />
 		<result property="description" column="description" />
 		<result property="available" column="available" />
-		<result property="$jacocoData" column="data" />
 	</resultMap>
 
 </mapper>

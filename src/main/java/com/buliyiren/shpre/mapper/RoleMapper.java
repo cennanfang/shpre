@@ -1,11 +1,11 @@
 package com.buliyiren.shpre.mapper;
 
 import tk.mybatis.mapper.common.Mapper;
-import com.buliyiren.shpre.model.User; 
+import com.buliyiren.shpre.model.Role; 
 /**
-* UserMapper 类
+* RoleMapper 类
 * Thu Nov 16 10:04:52 CST 2017
 */ 
-public interface UserMapper extends Mapper<User> {
+public interface RoleMapper extends Mapper<Role> {
 }
 

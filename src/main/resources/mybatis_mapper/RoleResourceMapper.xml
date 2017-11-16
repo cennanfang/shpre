@@ -6,7 +6,6 @@
 	<resultMap id="roleResourceResult" type="com.buliyiren.shpre.model.RoleResource">
 		<result property="roleId" column="role_id" />
 		<result property="resourceId" column="resource_id" />
-		<result property="$jacocoData" column="data" />
 	</resultMap>
 
 </mapper>

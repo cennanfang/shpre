@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 /**
 * Message 实体类
-* Thu Nov 16 09:52:30 CST 2017 cennanfang
+* Thu Nov 16 10:04:51 CST 2017 cennanfang
 */ 
 @Table(name = "t_message")
 public class Message extends BaseModel {

@@ -11,7 +11,6 @@
 		<result property="parentId" column="parent_id" />
 		<result property="permission" column="permission" />
 		<result property="available" column="available" />
-		<result property="$jacocoData" column="data" />
 	</resultMap>
 
 </mapper>

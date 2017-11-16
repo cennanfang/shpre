@@ -17,7 +17,6 @@
 		<result property="email" column="email" />
 		<result property="address" column="address" />
 		<result property="registerDate" column="register_date" />
-		<result property="$jacocoData" column="data" />
 	</resultMap>
 
 </mapper>
