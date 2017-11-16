@@ -38,7 +38,7 @@ public class UserControllerTest extends RestAssuredBaseTest {
 
     private User randomUser(){
         User user = new User();
-        user.setName(RandomUtils.randomString(7));
+        user.setUsername(RandomUtils.randomString(7));
         user.setPassword(RandomUtils.randomString(10));
         return user;
 
@@ -81,7 +81,7 @@ public class UserControllerTest extends RestAssuredBaseTest {
         assertNotNull(expectedUser);
         assertNotNull(actualUser);
         assertEquals(expectedUser.getId(),actualUser.getId());
-        assertEquals(expectedUser.getName(),actualUser.getName());
+        assertEquals(expectedUser.getUsername(),actualUser.getUsername());
         assertEquals(expectedUser.getPassword(),actualUser.getPassword());
     }
 
@@ -93,7 +93,7 @@ public class UserControllerTest extends RestAssuredBaseTest {
         String randomName = RandomUtils.randomString(10);
         User updateUser = new User();
         updateUser.setId(user.getId());
-        updateUser.setName(randomName);
+        updateUser.setUsername(randomName);
         MockMvcResponse put = given()
                 .accept(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -105,7 +105,7 @@ public class UserControllerTest extends RestAssuredBaseTest {
         .apply(document("更新用户的基本信息"));
         User queryUser = userService.getUserById(user.getId());
         assertNotNull(queryUser);
-        assertEquals(updateUser.getName(),queryUser.getName());
+        assertEquals(updateUser.getUsername(),queryUser.getUsername());
     }
 
 

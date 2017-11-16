@@ -21,7 +21,7 @@ public class UserServiceTest extends  BaseUnitTest{
     @Ignore
     public void test(){
         User user = new User();
-        user.setName("陈开华");
+        user.setUsername("陈开华");
         user.setPassword("密码");
         userService.addUser(user);
         System.out.println(user);

@@ -53,7 +53,7 @@ public class UserController {
     })
     public ResponseEntity addUser(@ApiParam(value = "用户信息") @RequestBody User user) {
         User countUser = new User();
-        countUser.setName(user.getName());
+        countUser.setUsername(user.getUsername());
         //如果存在，返回错误码
         if (userService.isExist(countUser)) {
             return ErrorResponseEntity.buildToResponseEntity(1000, "手机号已经注册");
@@ -80,7 +80,7 @@ public class UserController {
 
     @RequestMapping(value = "{id}",method = RequestMethod.PUT)
     @ApiOperation(value = "更新用户的基本信息", notes = "不会处理id字段和password字段")
-    public void update(@PathVariable("id") @ApiParam("用户id") int id ,@RequestBody @ApiParam("新的用户信息") User user) {
+    public void update(@PathVariable("id") @ApiParam("用户id") long id ,@RequestBody @ApiParam("新的用户信息") User user) {
         user.setId(id);
         userService.update(user);
     }

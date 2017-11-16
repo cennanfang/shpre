@@ -20,12 +20,12 @@ public class UserService  {
 
 
     @RequiresRoles("admin")
-    public void deleteWithAdminRoleById(int id){
+    public void deleteWithAdminRoleById(long id){
         userMapper.deleteByPrimaryKey(id);
     }
 
 
-    public User getUserById(int id){
+    public User getUserById(long id){
         return userMapper.selectByPrimaryKey(id);
     }
 
