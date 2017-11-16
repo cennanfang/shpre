@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buliyiren.shpre.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.buliyiren.shpre.model.User">
-    <!--
-      WARNING - @mbggenerated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="CHAR" property="name" />
-    <result column="password" jdbcType="CHAR" property="password" />
-  </resultMap>
+
+	<!-- 结果集 -->
+	<resultMap id="userResult" type="com.buliyiren.shpre.model.User">
+		<id property="id" column="id" />
+		<result property="organizationId" column="organization_id" />
+		<result property="username" column="username" />
+		<result property="nickName" column="nick_name" />
+		<result property="password" column="password" />
+		<result property="salt" column="salt" />
+		<result property="locked" column="locked" />
+		<result property="sex" column="sex" />
+		<result property="birthDate" column="birth_date" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="address" column="address" />
+		<result property="registerDate" column="register_date" />
+		<result property="$jacocoData" column="data" />
+	</resultMap>
+
 </mapper>
